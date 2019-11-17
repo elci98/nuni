@@ -14,17 +14,16 @@ main.o:main.c
 
 mymaths:basicMath.o power.o
 	$ ar rc libmyMath.a $^
-
-mymathd:basicMath.o power.o
-	$ gcc -Wall -shared -o libmyMath.so $^ 
-
+	
 mains:main.o 
 	$ gcc -Wall main.o -L. -lmyMath -o $@
+	
+mymathd:basicMath.o power.o
+	$ gcc -Wall -shared -o libmyMath.so $^ 
 
 maind:main.o 
 	$ gcc -Wall main.o -L. -lmyMath -o $@
 	
-
 clean:
 	$ rm *o *a maind mains
 
