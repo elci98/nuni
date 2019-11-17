@@ -8,7 +8,6 @@ double f1(double x)
 }
 double f2(double x)     
 {
-    printf("%f\t+%f\n",(float)mul(3,x),(float)mul(2,Pow(x,2) ));
     return add( (float)mul(3,x) , (float)mul(2,Pow(x,2) ));
 }
 double f3(double x)
